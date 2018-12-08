@@ -20,9 +20,13 @@ namespace Blog
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MainWindowViewModel vm { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainWindowViewModel();
         }
     }
+
 }
