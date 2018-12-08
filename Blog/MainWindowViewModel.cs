@@ -16,20 +16,6 @@ namespace Blog
             set => Set(ref feed, value);
         }
 
-        private string newsHeader;
-        public string NewsHeader
-        {
-            get => newsHeader;
-            set => Set(ref newsHeader, value);
-        }
-
-        private string imageLink;
-        public string ImageLink
-        {
-            get => imageLink;
-            set => Set(ref imageLink, value);
-        }
-
         public MainWindowViewModel()
         {
             Feed.Add(new NewsItem { Header = "Hello", Text = "aa", ImageLink = @"C:\Users\Huse_fr93\source\repos\Blog.jpeg" });

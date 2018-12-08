@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Blog"
         mc:Ignorable="d"
-        Title="Blog" Height="450" Width="600">
+        Title="Blog" Height="500" Width="600">
     <Window.Resources>
         <DataTemplate x:Key="lbItem">
             <DockPanel HorizontalAlignment="Stretch">
@@ -14,11 +14,13 @@
                        Source="{Binding ImageLink}">
                 </Image>
                 <Label DockPanel.Dock="Left"
-                         FontSize="50"
-                         Content="{Binding NewsHeader}"
-                         Background="Green"
-                         HorizontalContentAlignment="Stretch"
-                         HorizontalAlignment="Stretch">
+                       FontSize="50"
+                       BorderBrush="Black"
+                       BorderThickness="2"
+                       Content="{Binding Header}"
+                       HorizontalContentAlignment="Stretch"
+                       HorizontalAlignment="Stretch"
+                         >
                 </Label>
             </DockPanel>
         </DataTemplate>
@@ -30,7 +32,7 @@
         </Grid.RowDefinitions>
         <ListBox Grid.Row="0" 
                  ItemTemplate="{StaticResource lbItem}"
-                 ItemsSource="{Binding Blog}"
+                 ItemsSource="{Binding Feed}"
                  HorizontalContentAlignment="Stretch"
                  Margin="10"
                  BorderThickness="5"

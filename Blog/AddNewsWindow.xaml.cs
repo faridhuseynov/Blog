@@ -22,22 +22,24 @@ namespace Blog
         public AddNewsWindow()
         {
             InitializeComponent();
-
+            DataContext = this;
         }
         public NewsItem news;
-        private string newsHeader;
-        public string NewsHeader
+
+        private void OkButton_Click(object sender, RoutedEventArgs e)
         {
-            get => newsHeader;
-            set => Set(ref newsHeader, value);
+            if (string.IsNullOrWhiteSpace(tbHeader.Text)||string.IsNullOrWhiteSpace(tbText.Text))
+                MessageBox.Show("Some data is missing, please check", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            else
+            {
+                news = new NewsItem{ Header = tbHeader.Text, ImageLink = tbImageLink.Text, Text = tbText.Text };
+                Close();
+            }
         }
 
-        private string imageLink;
-        public string ImageLink
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-            get => imageLink;
-            set => Set(ref imageLink, value);
+            Close();
         }
-
     }
 }

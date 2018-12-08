@@ -16,6 +16,7 @@
             <RowDefinition Height="40"></RowDefinition>
         </Grid.RowDefinitions>
         <extToolkit:WatermarkTextBox Grid.Row="0"
+                                     Name="tbHeader"
                                      Watermark="Enter the News Header"
                                      FontSize="35"
                                      HorizontalContentAlignment="Stretch"
@@ -32,14 +33,16 @@
                                          Watermark="Enter image link"
                                          FontSize="35"
                                          BorderBrush="Black"
-                                     BorderThickness="2"
-                                     Margin="5">
+                                         Name="tbImageLink"
+                                         BorderThickness="2"
+                                         Margin="5">
             </extToolkit:WatermarkTextBox>
         </DockPanel>
         <extToolkit:WatermarkTextBox Grid.Row="2"
                                      Watermark="Enter Text"
                                      FontSize="40"
                                      BorderBrush="Black"
+                                     Name="tbText"
                                      BorderThickness="2"
                                      Margin="5">
         </extToolkit:WatermarkTextBox>
@@ -49,7 +52,9 @@
                     FontFamily="Arial"
                     FontWeight="Bold"
                     Width="290"
-                    Margin="5">
+                    Margin="5"
+                    Name="OkButton"
+                    Click="OkButton_Click">
                 OK
             </Button>
             <Button DockPanel.Dock="Right"
@@ -58,6 +63,7 @@
                     FontWeight="Bold"
                     Width="290"
                     Margin="5"
+                    Click="CancelButton_Click"
                     >
                 Cancel
             </Button>

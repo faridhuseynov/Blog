@@ -31,6 +31,7 @@ namespace Blog
         private void NewsAddButton_Click(object sender, RoutedEventArgs e)
         {
             AddNewsWindow window = new AddNewsWindow();
+            window.ShowDialog();
             if (window.news!=null)
             {
                 vm.Feed.Add(window.news);
