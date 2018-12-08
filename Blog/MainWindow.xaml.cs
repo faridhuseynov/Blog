@@ -20,13 +20,15 @@ namespace Blog
     /// </summary>
     public partial class MainWindow : Window
     {
-        private MainWindowViewModel vm { get; set; }
+        private MainWindowViewModel vm { get; set; } = new MainWindowViewModel();
 
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new MainWindowViewModel();
+            DataContext = vm;
+            vm.Blog.Add(new NewsItem { Header = "Hello", Text = "aa" });
         }
+        
     }
 
 }

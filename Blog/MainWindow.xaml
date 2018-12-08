@@ -8,19 +8,26 @@
         Title="Blog" Height="450" Width="600">
     <Window.Resources>
         <DataTemplate x:Key="lbItem">
-            <DockPanel>
-                <Image DockPanel.Dock="Right"></Image>
-                <TextBox DockPanel.Dock="Left" 
+            <DockPanel HorizontalAlignment="Stretch" LastChildFill="True">
+                <Image DockPanel.Dock="Right" Width="100"></Image>
+                <Label DockPanel.Dock="Left"
                          FontSize="50"
-                         HorizontalContentAlignment="Center"
-                         VerticalContentAlignment="Center">
-                </TextBox>
+                         Content="{Binding Header}"
+                         HorizontalContentAlignment="Stretch"
+                         HorizontalAlignment="Stretch">
+                </Label>
             </DockPanel>
         </DataTemplate>
     </Window.Resources>
-    <StackPanel>
-        <ListBox ItemTemplate="{StaticResource lbItem}">
-            
-        </ListBox>
-    </StackPanel>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListBox Grid.Row="0" 
+                 ItemTemplate="{StaticResource lbItem}"
+                 ItemsSource="{Binding Blog}"
+                 HorizontalContentAlignment="Stretch"></ListBox>
+        <Button Grid.Row="1" FontSize="20">➕</Button>
+    </Grid>
 </Window>

@@ -9,6 +9,11 @@ namespace Blog
 {
     public class MainWindowViewModel
     {
-        public ObservableCollection<NewsItem> Blog { get; set; }
+        public ObservableCollection<NewsItem> Blog { get; set; } = new ObservableCollection<NewsItem>();
+
+        public MainWindowViewModel()
+        {
+           // Blog.Count
+        }
     }
 }
