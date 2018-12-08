@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,15 +21,21 @@ namespace Blog
     /// </summary>
     public partial class MainWindow : Window
     {
-        private MainWindowViewModel vm { get; set; } = new MainWindowViewModel();
-
+        private MainWindowViewModel vm = new MainWindowViewModel();
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = vm;
-            vm.Blog.Add(new NewsItem { Header = "Hello", Text = "aa",ImageLink= @"C:\Users\Huse_fr93\source\repos\Blog.jpeg" });
+            DataContext =vm ;
         }
-        
+
+        private void NewsAddButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddNewsWindow window = new AddNewsWindow();
+            if (window.news!=null)
+            {
+                vm.Feed.Add(window.news);
+            }
+        }
     }
 
 }
