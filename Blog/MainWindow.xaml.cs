@@ -26,7 +26,7 @@ namespace Blog
         {
             InitializeComponent();
             DataContext = vm;
-            vm.Blog.Add(new NewsItem { Header = "Hello", Text = "aa" });
+            vm.Blog.Add(new NewsItem { Header = "Hello", Text = "aa",ImageLink= @"C:\Users\Huse_fr93\source\repos\Blog.jpeg" });
         }
         
     }
