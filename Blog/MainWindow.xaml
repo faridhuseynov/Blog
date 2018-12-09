@@ -8,12 +8,17 @@
         Title="Blog" Height="500" Width="600">
     <Window.Resources>
         <DataTemplate x:Key="lbItem">
-            <DockPanel HorizontalAlignment="Stretch">
-                <Image DockPanel.Dock="Right" 
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <DockPanel Grid.Column="0" HorizontalAlignment="Stretch">
+                    <Image DockPanel.Dock="Right" 
                        Width="100"
                        Source="{Binding ImageLink}">
-                </Image>
-                <Label DockPanel.Dock="Left"
+                    </Image>
+                    <Label DockPanel.Dock="Left"
                        FontSize="50"
                        BorderBrush="Black"
                        BorderThickness="2"
@@ -21,8 +26,23 @@
                        HorizontalContentAlignment="Stretch"
                        HorizontalAlignment="Stretch"
                          >
-                </Label>
-            </DockPanel>
+                    </Label>
+                </DockPanel>
+                <DockPanel Grid.Column="1" 
+                           HorizontalAlignment="Stretch"
+                           LastChildFill="False">
+                    <Button DockPanel.Dock="Left" Width="30">
+                        📖
+                    </Button>
+                    <Button  Width="30" HorizontalAlignment="Stretch"
+                             Margin="5,0,0,0">
+                        🖋
+                    </Button>
+                    <Button DockPanel.Dock="Right"
+                            Width="30"
+                           >❌</Button>
+                </DockPanel>
+            </Grid>
         </DataTemplate>
     </Window.Resources>
     <Grid>
