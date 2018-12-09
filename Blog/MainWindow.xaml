@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Blog"
         mc:Ignorable="d"
-        Title="Blog" Height="500" Width="600">
+        Title="Blog" Height="500" Width="600" Name="Main">
     <Window.Resources>
         <DataTemplate x:Key="lbItem">
             <Grid>
@@ -35,7 +35,7 @@
                            HorizontalAlignment="Stretch"
                            LastChildFill="False">
                     <Button DockPanel.Dock="Left" Width="30"
-                            Command="{Binding ReadNews}"
+                            Command="{Binding DataContext.ReadNews,ElementName=Main}" 
                             CommandParameter="{Binding}">
                         📖
                     </Button>
@@ -45,7 +45,8 @@
                     </Button>
                     <Button DockPanel.Dock="Right"
                             Width="30"
-                           >❌</Button>
+                            Command="{Binding DataContext.DeleteNews, ElementName=Main}"
+                            CommandParameter="{Binding}">❌</Button>
                 </DockPanel>
             </Grid>
         </DataTemplate>
@@ -74,5 +75,3 @@
         </Button>
     </Grid>
 </Window>
-                <!--Command="{Binding DataContext.AddNews, ElementName=Main}"
-                CommandParameter="{Binding}"-->

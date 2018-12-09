@@ -27,12 +27,13 @@
                  Text="{Binding News.Text}"
                  Margin="5">
         </TextBox>
-        <Button Grid.Row="3"
+        <Button Grid.Row="3"              
                 FontSize="25"
                 FontFamily="Arial"
                 FontWeight="Bold"
                 Margin="5,0"
-                Name="CloseButton">
+                Name="CloseButton"
+                Click="CloseButton_Click">
             Close
         </Button>
     </Grid>

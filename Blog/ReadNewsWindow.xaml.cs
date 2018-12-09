@@ -19,13 +19,17 @@ namespace Blog
     /// </summary>
     public partial class ReadNewsWindow : Window
     {
-        public ReadNewsWindow(object parameter)
+        public NewsItem item;
+        public ReadNewsWindow(NewsItem parameter)
         {
             InitializeComponent();
             DataContext = this;
-            var News=parameter as NewsItem;
-            
+            var News = parameter as NewsItem;
         }
-        
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
