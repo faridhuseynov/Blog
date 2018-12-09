@@ -25,19 +25,18 @@ namespace Blog
         public MainWindow()
         {
             InitializeComponent();
-            DataContext =vm ;
+            DataContext = vm;
         }
 
         private void NewsAddButton_Click(object sender, RoutedEventArgs e)
         {
             AddNewsWindow window = new AddNewsWindow();
             window.ShowDialog();
-            if (window.news!=null)
+            if (window.news != null)
             {
                 vm.Feed.Add(window.news);
             }
         }
 
     }
-
 }

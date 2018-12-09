@@ -35,7 +35,7 @@
                            HorizontalAlignment="Stretch"
                            LastChildFill="False">
                     <Button DockPanel.Dock="Left" Width="30"
-                            Command="{Binding ReadNews,ElementName=Main}"
+                            Command="{Binding ReadNews}"
                             CommandParameter="{Binding}">
                         📖
                     </Button>

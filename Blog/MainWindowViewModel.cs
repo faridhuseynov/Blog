@@ -20,7 +20,26 @@ namespace Blog
         {
             Feed.Add(new NewsItem { Header = "Hello", Text = "aa", ImageLink = "https://img.day.az/2018/12/09/400x275/parkur_gym_091218_3.jpg" });
         }
-        
+
+        private string selectedNews;
+        public string SelectedNews
+        {
+            get => selectedNews;
+            set => Set(ref selectedNews, value);
+        }
+
+
+        private RelayCommand readNews;
+        public RelayCommand ReadNews
+        {
+            get => readNews ?? (readNews = new RelayCommand(
+                 param =>
+                 {
+                     var window = new ReadNewsWindow(SelectedNews);
+                     window.ShowDialog();
+                 }
+                 ));
+        }
 
         //private RelayCommand addNews;
         //public RelayCommand AddNews

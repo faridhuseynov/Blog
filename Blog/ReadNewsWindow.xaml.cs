@@ -23,7 +23,8 @@ namespace Blog
         {
             InitializeComponent();
             DataContext = this;
-            NewsItem News=parameter as NewsItem;
+            var News=parameter as NewsItem;
+            
         }
         
     }
