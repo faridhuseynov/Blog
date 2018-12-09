@@ -18,9 +18,9 @@ namespace Blog
 
         public MainWindowViewModel()
         {
-            Feed.Add(new NewsItem { Header = "Hello", Text = "aa", ImageLink = @"C:\Users\Huse_fr93\source\repos\Blog.jpeg" });
+            Feed.Add(new NewsItem { Header = "Hello", Text = "aa", ImageLink = "https://img.day.az/2018/12/09/400x275/parkur_gym_091218_3.jpg" });
         }
-
+        
 
         //private RelayCommand addNews;
         //public RelayCommand AddNews

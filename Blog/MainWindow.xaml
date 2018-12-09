@@ -13,9 +13,11 @@
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition Width="100"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
+                <!--Dockpanel for header of news & image preview-->
                 <DockPanel Grid.Column="0" HorizontalAlignment="Stretch">
                     <Image DockPanel.Dock="Right" 
                        Width="100"
+                       Margin="2,0"
                        Source="{Binding ImageLink}">
                     </Image>
                     <Label DockPanel.Dock="Left"
@@ -28,10 +30,13 @@
                          >
                     </Label>
                 </DockPanel>
+                <!--Dockpanel for 3 commands: read, edit & delete-->
                 <DockPanel Grid.Column="1" 
                            HorizontalAlignment="Stretch"
                            LastChildFill="False">
-                    <Button DockPanel.Dock="Left" Width="30">
+                    <Button DockPanel.Dock="Left" Width="30"
+                            Command="{Binding ReadNews,ElementName=Main}"
+                            CommandParameter="{Binding}">
                         📖
                     </Button>
                     <Button  Width="30" HorizontalAlignment="Stretch"
@@ -56,7 +61,8 @@
                  HorizontalContentAlignment="Stretch"
                  Margin="10"
                  BorderThickness="5"
-                 BorderBrush="Black"></ListBox>
+                 BorderBrush="Black"
+                 SelectedItem="{Binding SelectedNews}"></ListBox>
         <Button Grid.Row="1" 
                 Name="NewsAddButton"
                 FontSize="20"

@@ -76,6 +76,9 @@
     <Compile Include="AddNewsWindow.xaml.cs">
       <DependentUpon>AddNewsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ReadNewsWindow.xaml.cs">
+      <DependentUpon>ReadNewsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RelayCommand.cs" />
     <Page Include="AddNewsWindow.xaml">
       <SubType>Designer</SubType>
@@ -93,6 +96,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ReadNewsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainWindowViewModel.cs" />

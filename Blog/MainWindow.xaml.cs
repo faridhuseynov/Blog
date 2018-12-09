@@ -37,6 +37,7 @@ namespace Blog
                 vm.Feed.Add(window.news);
             }
         }
+
     }
 
 }
