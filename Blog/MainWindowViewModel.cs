@@ -9,7 +9,8 @@ namespace Blog
 {
     public class MainWindowViewModel:ObservableObject
     {
-        private ObservableCollection<NewsItem> feed=new ObservableCollection<NewsItem>();
+        private NewsRepository db = new NewsRepository();
+        private ObservableCollection<NewsItem> feed;
         public ObservableCollection<NewsItem> Feed
         {
             get => feed;
@@ -18,7 +19,8 @@ namespace Blog
 
         public MainWindowViewModel()
         {
-            Feed.Add(new NewsItem { Header = "Life after 50", Text = "This guy is looser", ImageLink = "https://img.day.az/2018/12/09/400x275/parkur_gym_091218_3.jpg" });
+            Feed= new ObservableCollection<NewsItem>(db.List());
+            //Feed.Add(new NewsItem { Header = "Life after 50", Text = "This guy is looser", ImageLink = "https://img.day.az/2018/12/09/400x275/parkur_gym_091218_3.jpg" });
         }
 
 
@@ -32,7 +34,8 @@ namespace Blog
                       window.ShowDialog();
                       if (window.news != null)
                       {
-                          Feed.Add(window.news);
+                          db.Add(window.news);
+                          Feed = new ObservableCollection<NewsItem>(db.List());
                       }
                   }
                  ));
@@ -64,6 +67,7 @@ namespace Blog
                      window.Title = news.Header;
                      window.News = news;
                      window.ShowDialog();
+                     db.Edit(news.Id,news);
                  }
                  ));
         }
@@ -75,7 +79,8 @@ namespace Blog
                  param =>
                  {
                      var news = param as NewsItem;
-                     Feed.Remove(news);
+                     db.Delete(news.Id);
+                     Feed = new ObservableCollection<NewsItem>(db.List());
                  }
                  ));
         }

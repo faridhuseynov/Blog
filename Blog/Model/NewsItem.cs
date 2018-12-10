@@ -8,6 +8,8 @@ namespace Blog
 {
     public class NewsItem:ObservableObject
     {
+        public int Id { get; set; }
+
         private string header;
         public string Header
         {
