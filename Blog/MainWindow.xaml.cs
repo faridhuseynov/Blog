@@ -25,6 +25,7 @@ namespace Blog
         {
             InitializeComponent();
             DataContext = new MainWindowViewModel();
+
         }
 
         

@@ -50,9 +50,9 @@
             <Button DockPanel.Dock="Left"
                     FontSize="25"
                     FontFamily="Arial"
-                    FontWeight="Bold"
+                    VerticalAlignment="Center"
                     Width="290"
-                    Margin="5"
+                    Margin="5,5,0,5"
                     Name="OkButton"
                     Click="OkButton_Click">
                 OK
@@ -60,9 +60,9 @@
             <Button DockPanel.Dock="Right"
                     FontSize="25"
                     FontFamily="Arial"
-                    FontWeight="Bold"
+                    VerticalAlignment="Center"
                     Width="290"
-                    Margin="5"
+                    Margin="0,5,5,5"
                     Click="CancelButton_Click"
                     >
                 Cancel

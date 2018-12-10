@@ -18,7 +18,7 @@ namespace Blog
 
         public MainWindowViewModel()
         {
-            Feed.Add(new NewsItem { Header = "Hello", Text = "aa", ImageLink = "https://img.day.az/2018/12/09/400x275/parkur_gym_091218_3.jpg" });
+            Feed.Add(new NewsItem { Header = "Life after 50", Text = "This guy is looser", ImageLink = "https://img.day.az/2018/12/09/400x275/parkur_gym_091218_3.jpg" });
         }
 
 
@@ -45,7 +45,8 @@ namespace Blog
                  param =>
                  {
                      var news = param as NewsItem;
-                     var window = new ReadNewsWindow(news);
+                     var window = new ReadNewsWindow();
+                     window.News = news;
                      window.ShowDialog();
                  }
                  ));

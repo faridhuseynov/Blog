@@ -15,8 +15,10 @@
         </Grid.RowDefinitions>
         <TextBox Grid.Row="0"
                  FontSize="50"
-                 HorizontalContentAlignment="Center"
                  Text="{Binding News.Header}"
+                 HorizontalContentAlignment="Center"
+                 IsReadOnly="True"
+                 BorderThickness="0"
                  Margin="5">
         </TextBox>
         <Image Grid.Row="1" Width="500"
@@ -25,13 +27,14 @@
         <TextBox Grid.Row="2"
                  FontSize="40"
                  Text="{Binding News.Text}"
+                 IsReadOnly="True"
+                 BorderThickness="0"
                  Margin="5">
         </TextBox>
         <Button Grid.Row="3"              
                 FontSize="25"
                 FontFamily="Arial"
-                FontWeight="Bold"
-                Margin="5,0"
+                Margin="5,5,5,0"
                 Name="CloseButton"
                 Click="CloseButton_Click">
             Close
