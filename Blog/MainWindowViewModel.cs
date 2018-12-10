@@ -46,6 +46,22 @@ namespace Blog
                  {
                      var news = param as NewsItem;
                      var window = new ReadNewsWindow();
+                     window.Title = news.Header;
+                     window.News = news;
+                     window.ShowDialog();
+                 }
+                 ));
+        }
+
+        private RelayCommand editNews;
+        public RelayCommand EditNews
+        {
+            get => editNews ?? (editNews = new RelayCommand(
+                 param =>
+                 {
+                     var news = param as NewsItem;
+                     var window = new NewsEditWindow();
+                     window.Title = news.Header;
                      window.News = news;
                      window.ShowDialog();
                  }

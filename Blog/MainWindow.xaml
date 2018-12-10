@@ -40,6 +40,8 @@
                         📖
                     </Button>
                     <Button  Width="30" HorizontalAlignment="Stretch"
+                             Command="{Binding DataContext.EditNews,ElementName=Main}"
+                             CommandParameter="{Binding}"
                              Margin="5,0,0,0">
                         🖋
                     </Button>

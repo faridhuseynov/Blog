@@ -76,6 +76,9 @@
     <Compile Include="AddNewsWindow.xaml.cs">
       <DependentUpon>AddNewsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NewsEditWindow.xaml.cs">
+      <DependentUpon>NewsEditWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ReadNewsWindow.xaml.cs">
       <DependentUpon>ReadNewsWindow.xaml</DependentUpon>
     </Compile>
@@ -96,6 +99,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NewsEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ReadNewsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
