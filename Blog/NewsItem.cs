@@ -6,10 +6,29 @@ using System.Threading.Tasks;
 
 namespace Blog
 {
-    public class NewsItem
+    public class NewsItem:ObservableObject
     {
-        public string Header { get; set; }
-        public string Text { get; set; }
-        public string ImageLink { get; set; }
+        private string header;
+        public string Header
+        {
+            get =>  header;
+            set => Set(ref header, value);
+        }
+
+        private string text;
+        public string Text
+        {
+            get => text;
+            set => Set(ref text, value);
+        }
+
+
+        private string imageLink;
+        public string ImageLink
+        {
+            get => imageLink;
+            set => Set(ref imageLink, value);
+        }
+
     }
 }

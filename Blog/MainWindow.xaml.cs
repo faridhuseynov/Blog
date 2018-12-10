@@ -21,22 +21,13 @@ namespace Blog
     /// </summary>
     public partial class MainWindow : Window
     {
-        private MainWindowViewModel vm = new MainWindowViewModel();
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = vm;
+            DataContext = new MainWindowViewModel();
         }
 
-        private void NewsAddButton_Click(object sender, RoutedEventArgs e)
-        {
-            AddNewsWindow window = new AddNewsWindow();
-            window.ShowDialog();
-            if (window.news != null)
-            {
-                vm.Feed.Add(window.news);
-            }
-        }
+        
 
     }
 }

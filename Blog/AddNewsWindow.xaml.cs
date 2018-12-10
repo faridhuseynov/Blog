@@ -28,11 +28,13 @@ namespace Blog
 
         private void OkButton_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(tbHeader.Text)||string.IsNullOrWhiteSpace(tbText.Text))
-                MessageBox.Show("Some data is missing, please check", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            if (string.IsNullOrWhiteSpace(tbHeader.Text))
+                MessageBox.Show("News header is missing, please fill in", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            else if (string.IsNullOrWhiteSpace(tbText.Text))
+                MessageBox.Show("News text is missing, please fill in", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             else
             {
-                news = new NewsItem{ Header = tbHeader.Text, ImageLink = tbImageLink.Text, Text = tbText.Text };
+                news = new NewsItem { Header = tbHeader.Text, ImageLink = tbImageLink.Text, Text = tbText.Text };
                 Close();
             }
         }

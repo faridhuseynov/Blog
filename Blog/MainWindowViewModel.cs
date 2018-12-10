@@ -21,21 +21,31 @@ namespace Blog
             Feed.Add(new NewsItem { Header = "Hello", Text = "aa", ImageLink = "https://img.day.az/2018/12/09/400x275/parkur_gym_091218_3.jpg" });
         }
 
-        private NewsItem selectedNews;
-        public NewsItem SelectedNews
+
+        private RelayCommand newsAdd;
+        public RelayCommand NewsAdd
         {
-            get => selectedNews;
-            set => Set(ref selectedNews, value);
+            get => newsAdd ?? (newsAdd = new RelayCommand(
+                 param =>
+                  {
+                      AddNewsWindow window = new AddNewsWindow();
+                      window.ShowDialog();
+                      if (window.news != null)
+                      {
+                          Feed.Add(window.news);
+                      }
+                  }
+                 ));
         }
-
-
+        
         private RelayCommand readNews;
         public RelayCommand ReadNews
         {
             get => readNews ?? (readNews = new RelayCommand(
                  param =>
                  {
-                     var window = new ReadNewsWindow(SelectedNews);
+                     var news = param as NewsItem;
+                     var window = new ReadNewsWindow(news);
                      window.ShowDialog();
                  }
                  ));
@@ -47,9 +57,9 @@ namespace Blog
             get => deleteNews ?? (deleteNews = new RelayCommand(
                  param =>
                  {
-                     Feed.Remove(SelectedNews);
-                 },
-                 param => SelectedNews != null
+                     var news = param as NewsItem;
+                     Feed.Remove(news);
+                 }
                  ));
         }
 

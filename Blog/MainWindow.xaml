@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Blog" Height="500" Width="600" Name="Main">
     <Window.Resources>
-        <DataTemplate x:Key="lbItem">
+        <DataTemplate x:Key="NewsItem">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
@@ -57,20 +57,20 @@
             <RowDefinition Height="40"></RowDefinition>
         </Grid.RowDefinitions>
         <ListBox Grid.Row="0" 
-                 ItemTemplate="{StaticResource lbItem}"
+                 ItemTemplate="{StaticResource NewsItem}"
                  ItemsSource="{Binding Feed}"
                  HorizontalContentAlignment="Stretch"
                  Margin="10"
                  BorderThickness="5"
-                 BorderBrush="Black"
-                 SelectedItem="{Binding SelectedNews}"></ListBox>
+                 BorderBrush="Black">
+        </ListBox>
         <Button Grid.Row="1" 
                 Name="NewsAddButton"
                 FontSize="20"
                 Margin="10,0"
                 BorderThickness="5"
                 BorderBrush="Black"
-                Click="NewsAddButton_Click">
+                Command="{Binding NewsAdd}">
             ➕
         </Button>
     </Grid>
